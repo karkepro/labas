@@ -1,0 +1,135 @@
+import java.util.ArrayList;
+
+class Phone {
+    private String brand;
+    private String model;
+
+    public Phone(String brand, String model) {
+        this.brand = brand;
+        this.model = model;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+}
+
+class Price {
+    private boolean hasDiscount;
+    private double price;
+
+    public Price(boolean hasDiscount, double price) {
+        this.hasDiscount = hasDiscount;
+        this.price = price;
+    }
+
+    public boolean hasDiscount() {
+        return hasDiscount;
+    }
+
+    public void setHasDiscount(boolean hasDiscount) {
+        this.hasDiscount = hasDiscount;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+}
+
+class Reviews {
+    private String brand;
+    private int rating;
+    private ArrayList<String> comments;
+
+    public Reviews(String brand, int rating) {
+        this.brand = brand;
+        this.rating = rating;
+        this.comments = new ArrayList<>();
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    //c help
+    public ArrayList<String> getComments() {
+        return comments;
+    }
+
+    public void addComment(String comment) {
+        comments.add(comment);
+    }
+}
+
+class Airpods {
+    private String model;
+    private String color;
+
+    public Airpods(String model, String color) {
+        this.model = model;
+        this.color = color;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
+//c help
+public class Eshopas {
+    public static void main(String[] args) {
+
+        Phone myPhone = new Phone("Apple", "iPhone 13");
+        System.out.println("Phone: " + myPhone.getBrand() + " " + myPhone.getModel());
+
+        Price Price = new Price(false, 500.0);
+        System.out.println("Discount: " + (Price.hasDiscount() ? "Yes" : "No Discount") + ", Final Price: " + Price.getPrice());
+
+        Reviews Reviews = new Reviews("Apple Iphone 13", 5);
+        Reviews.addComment("Great phone");
+        Reviews.addComment("Grazus labai");
+        System.out.println("Brand: " + Reviews.getBrand() + ", Rating: " + Reviews.getRating() + " stars");
+        System.out.println("Comments: " + Reviews.getComments());
+        Airpods myAirpods = new Airpods("Airpods Pro", "White");
+        System.out.println("Airpods: " + myAirpods.getModel() + ", Color: " + myAirpods.getColor());
+    }
+}
